@@ -2,7 +2,7 @@ ship = Quadcopter Jet
 version = 1.2.1
 description = 
 type = VAB
-size = 3.15285444,1.96905708,3.1528554
+size = 3.51791406,2.79425049,3.51792145
 PART
 {
 	part = probeCoreOcto2_4290416894
@@ -253,6 +253,75 @@ PART
 }
 PART
 {
+	part = seatExternalCmd_4290576996
+	partName = Part
+	pos = -0.023367675,15.6541319,-0.167009607
+	attPos = 0,0,0
+	attPos0 = -0.0124083925,0.250697136,0.0124083608
+	rot = 0,0.707106709,-0.707106829,5.30874935E-16
+	attRot = 0,0,0,1
+	attRot0 = 0,-0.707106709,0.707106829,-5.30874935E-16
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = -1
+	resPri = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	srfN = srfAttach,probeCoreOcto2_4290416894
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = KerbalSeat
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleTripLogger
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		Log
+		{
+			flight = 0
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
 	part = sasModule_4290085366
 	partName = Part
 	pos = -0.0109592825,15.0512609,-0.179417968
@@ -279,8 +348,8 @@ PART
 	link = strutCube_4293928652
 	link = strutCube_4293928248
 	link = strutCube_4293927844
-	link = batteryBankMini_4294434798
-	attN = bottom,batteryBankMini_4294434798
+	link = advSasModule_4292121132
+	attN = bottom,advSasModule_4292121132
 	attN = top,batteryBankMini_4290110136
 	EVENTS
 	{
@@ -371,7 +440,7 @@ PART
 {
 	part = strutCube_4294635236
 	partName = Part
-	pos = -0.500487924,15.0797281,-0.668946505
+	pos = -0.500488937,15.0797281,-0.668947518
 	attPos = 0,0,0
 	attPos0 = 3.5527122E-15,0.25746876,3.06926573E-08
 	rot = -0.270598173,0.270598084,0.653281391,-0.653281689
@@ -410,7 +479,7 @@ PART
 {
 	part = miniFuselage_4294613374
 	partName = Part
-	pos = -0.7004897,15.4797277,-0.86894691
+	pos = -0.700494528,15.4797277,-0.868947744
 	attPos = -0.319509685,0.140156657,0.0464713685
 	attPos0 = -0.0804901347,-0.422999889,-0.0464709215
 	rot = 2.08616257E-07,0.382683605,1.93715096E-07,-0.923879623
@@ -432,7 +501,6 @@ PART
 	modSize = 0,0,0
 	link = miniJetEngine_4294598460
 	link = miniIntake_4294589100
-	link = miniLandingLeg_4294579696
 	link = miniFuselage_4294627576
 	sym = miniFuselage_4293928588
 	sym = miniFuselage_4293928184
@@ -465,21 +533,21 @@ PART
 {
 	part = miniJetEngine_4294598460
 	partName = Part
-	pos = -0.700488925,15.0109777,-0.8689484
+	pos = -0.700492144,15.0109777,-0.868952751
 	attPos = 0,0,0
 	attPos0 = -2.68221157E-07,-0.468750119,-7.14568271E-09
-	rot = 1.04308128E-07,0.382684052,-1.93715096E-07,-0.923879445
+	rot = -1.49011612E-08,0.382684022,-1.49011612E-07,-0.923879504
 	attRot = 0,0,0,1
 	attRot0 = 1.05367128E-07,-1.05367128E-07,5.96046412E-08,1
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = False
-	istg = 0
+	istg = 1
 	resPri = 0
 	dstg = 0
 	sidx = 0
-	sqor = 0
+	sqor = 1
 	sepI = -1
 	attm = 0
 	modCost = 0
@@ -582,10 +650,10 @@ PART
 {
 	part = miniIntake_4294589100
 	partName = Part
-	pos = -0.700489759,15.9484873,-0.868944764
+	pos = -0.700496435,15.9485073,-0.868942738
 	attPos = 0,0,0
 	attPos0 = -1.49011754E-07,0.468750149,1.80371686E-07
-	rot = 3.7252903E-07,0.923879743,3.81381881E-07,-0.382683367
+	rot = 5.21540642E-07,0.923879743,6.25409427E-07,-0.382683426
 	attRot = 0,0,0,1
 	attRot0 = -4.47034729E-08,-0.707106888,-4.47035049E-08,0.707106769
 	mir = 1,1,1
@@ -649,14 +717,64 @@ PART
 }
 PART
 {
-	part = miniLandingLeg_4294579696
+	part = miniFuselage_4294627576
 	partName = Part
-	pos = -0.936241388,15.2340698,-1.10470033
-	attPos = 0,0,0
-	attPos0 = -0.333402306,-0.24565801,1.60149497E-07
-	rot = 2.38418579E-07,0.382683694,7.4505806E-08,-0.923879623
-	attRot = 0,0,0,1
-	attRot0 = -4.21468336E-08,8.42936885E-08,2.22044626E-15,1
+	pos = -0.00048045814,15.0797281,-0.768947005
+	attPos = 1.00222397,-0.514205039,0.0122731924
+	attPos0 = -0.436538517,0.114205405,-0.436537951
+	rot = 0.500000119,-0.500000417,0.499999672,0.50000006
+	attRot = -0.707106709,0,0,-0.707106709
+	attRot0 = -0.653281569,0.270598173,-0.270597905,-0.653281331
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Heaviest
+	rigidAttachment = False
+	istg = -1
+	resPri = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	link = SmallGearBay_4293670068
+	sym = miniFuselage_4294619508
+	sym = miniFuselage_4294619470
+	sym = miniFuselage_4294619432
+	srfN = srfAttach,miniFuselage_4294613374
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = LiquidFuel
+		amount = 50
+		maxAmount = 50
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = SmallGearBay_4293670068
+	partName = Part
+	pos = -0.000482097268,15.0797253,-1.36895597
+	attPos = -0.600000858,0.00204074406,-0.304781497
+	attPos0 = -3.42261117E-08,-0.00204077386,0.304783016
+	rot = -1.04308128E-07,2.38418579E-07,6.40749931E-07,-1.00000012
+	attRot = 0,-0.707106709,0,-0.707106709
+	attRot0 = 0.5,-0.49999994,0.50000006,-0.50000006
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = ForceHeaviest
@@ -671,10 +789,10 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = miniLandingLeg_4293928440
-	sym = miniLandingLeg_4293928036
-	sym = miniLandingLeg_4293927632
-	srfN = srfAttach,miniFuselage_4294613374
+	sym = SmallGearBay_4293670776
+	sym = SmallGearBay_4293669832
+	sym = SmallGearBay_4293669596
+	srfN = srfAttach,miniFuselage_4294627576
 	EVENTS
 	{
 	}
@@ -688,9 +806,9 @@ PART
 	{
 		name = ModuleWheelBase
 		isEnabled = True
-		wheelType = LEG
+		wheelType = FREE
 		isGrounded = False
-		autoFriction = False
+		autoFriction = True
 		frictionMultiplier = 1
 		stagingEnabled = True
 		EVENTS
@@ -728,6 +846,59 @@ PART
 	}
 	MODULE
 	{
+		name = ModuleWheelSteering
+		isEnabled = True
+		steeringEnabled = True
+		steeringInvert = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleWheelBrakes
+		isEnabled = True
+		brakeTweakable = 100
+		brakeInput = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			BrakeAction
+			{
+				actionGroup = Brakes
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleStatusLight
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = ModuleWheelDeployment
 		isEnabled = True
 		shieldedCanDeploy = False
@@ -750,7 +921,7 @@ PART
 	}
 	MODULE
 	{
-		name = ModuleWheelLock
+		name = FXModuleConstrainPosition
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -758,6 +929,68 @@ PART
 		}
 		ACTIONS
 		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = FXModuleLookAtConstraint
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleTestSubject
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleLight
+		isEnabled = True
+		isOn = False
+		uiWriteLock = False
+		lightR = 1
+		lightG = 1
+		lightB = 1
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleLightAction
+			{
+				actionGroup = Light
+			}
+			LightOnAction
+			{
+				actionGroup = None
+			}
+			LightOffAction
+			{
+				actionGroup = None
+			}
 		}
 		UPGRADESAPPLIED
 		{
@@ -779,90 +1012,35 @@ PART
 		{
 		}
 	}
-}
-PART
-{
-	part = miniFuselage_4294627576
-	partName = Part
-	pos = -0.000487491488,15.0797281,-0.768946886
-	attPos = 1.00222397,-0.514205039,0.0122731924
-	attPos0 = -0.436538517,0.114205405,-0.436537951
-	rot = 0.500000119,-0.500000417,0.499999881,0.49999994
-	attRot = -0.707106709,0,0,-0.707106709
-	attRot0 = -0.653281569,0.270598173,-0.270597905,-0.653281331
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Heaviest
-	rigidAttachment = False
-	istg = -1
-	resPri = 0
-	dstg = 0
-	sidx = -1
-	sqor = -1
-	sepI = -1
-	attm = 1
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	link = ladder1_4294616932
-	sym = miniFuselage_4294619508
-	sym = miniFuselage_4294619470
-	sym = miniFuselage_4294619432
-	srfN = srfAttach,miniFuselage_4294613374
-	EVENTS
+	MODULE
 	{
+		name = ModuleDragModifier
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
 	}
-	ACTIONS
+	MODULE
 	{
-	}
-	PARTDATA
-	{
-	}
-	RESOURCE
-	{
-		name = LiquidFuel
-		amount = 50
-		maxAmount = 50
-		flowState = True
-		isTweakable = True
-		hideFlow = False
-		isVisible = True
-		flowMode = Both
-	}
-}
-PART
-{
-	part = ladder1_4294616932
-	partName = Part
-	pos = 0.0138241202,15.0797281,-1.07908642
-	attPos = 0,0,0
-	attPos0 = -0.310138166,-0.0143117448,1.04308036E-07
-	rot = -0.707106888,2.38418579E-07,-0.707107186,-2.83122063E-07
-	attRot = 0.707106709,0,0,0.707106709
-	attRot0 = -0.707106769,1.97241135E-09,-3.17747713E-08,-0.707106888
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = -1
-	resPri = 0
-	dstg = 0
-	sidx = -1
-	sqor = -1
-	sepI = -1
-	attm = 1
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	srfN = srfAttach,miniFuselage_4294627576
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
+		name = ModuleDragModifier
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
 	}
 }
 PART
@@ -909,7 +1087,7 @@ PART
 {
 	part = strutCube_4293928620
 	partName = Part
-	pos = -0.500487983,15.0797281,0.310110986
+	pos = -0.500489056,15.0797281,0.310112
 	attPos = 0,0,0
 	attPos0 = 3.5527122E-15,0.25746876,3.06926573E-08
 	rot = 0.270597875,-0.270598143,0.65328151,-0.653281569
@@ -948,10 +1126,10 @@ PART
 {
 	part = miniFuselage_4293928588
 	partName = Part
-	pos = -0.700488448,15.4797277,0.510112643
+	pos = -0.700490773,15.4797277,0.510118425
 	attPos = -0.319509566,0.140156597,0.0464713387
 	attPos0 = -0.0804901347,-0.422999889,-0.0464709215
-	rot = 2.98023224E-07,-0.382683396,8.94069672E-08,-0.923879623
+	rot = 2.68220901E-07,-0.382683396,5.96046448E-08,-0.923879743
 	attRot = 0,0,0,1
 	attRot0 = 0,-4.93601107E-08,0.707106709,0.707106829
 	mir = 1,1,1
@@ -970,7 +1148,6 @@ PART
 	modSize = 0,0,0
 	link = miniJetEngine_4293928550
 	link = miniIntake_4293928484
-	link = miniLandingLeg_4293928440
 	link = miniFuselage_4294619508
 	sym = miniFuselage_4294613374
 	sym = miniFuselage_4293928184
@@ -1003,21 +1180,21 @@ PART
 {
 	part = miniJetEngine_4293928550
 	partName = Part
-	pos = -0.70048964,15.0109777,0.510111868
+	pos = -0.700493515,15.0109777,0.510115325
 	attPos = 0,0,0
 	attPos0 = -2.68221157E-07,-0.468750119,-7.14568271E-09
-	rot = -2.98023224E-08,-0.382683039,5.96046448E-08,-0.923879743
+	rot = 2.08616257E-07,-0.382683188,2.38418579E-07,-0.923879743
 	attRot = 0,0,0,1
 	attRot0 = 1.05367128E-07,-1.05367128E-07,5.96046412E-08,1
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = False
-	istg = 0
+	istg = 1
 	resPri = 0
 	dstg = 0
 	sidx = 0
-	sqor = 0
+	sqor = 1
 	sepI = -1
 	attm = 0
 	modCost = 0
@@ -1120,10 +1297,10 @@ PART
 {
 	part = miniIntake_4293928484
 	partName = Part
-	pos = -0.700487375,15.9484806,0.510113001
+	pos = -0.700487852,15.9484806,0.510118365
 	attPos = 0,0,0
 	attPos0 = -1.49011754E-07,0.468750149,1.80371686E-07
-	rot = -2.98023224E-08,0.382683814,-1.61438876E-07,-0.923879445
+	rot = -4.17232513E-07,0.382683635,-2.73686595E-07,-0.923879683
 	attRot = 0,0,0,1
 	attRot0 = -4.47034729E-08,-0.707106888,-4.47035049E-08,0.707106769
 	mir = 1,1,1
@@ -1187,14 +1364,64 @@ PART
 }
 PART
 {
-	part = miniLandingLeg_4293928440
+	part = miniFuselage_4294619508
 	partName = Part
-	pos = -0.936241865,15.2340698,0.745864809
-	attPos = 0,0,0
-	attPos0 = -0.333402306,-0.24565801,1.60149497E-07
-	rot = 5.96046448E-07,-0.382683337,3.27825546E-07,-0.923879683
-	attRot = 0,0,0,1
-	attRot0 = -4.21468336E-08,8.42936885E-08,2.22044626E-15,1
+	pos = -0.600486279,15.0797281,-0.189891458
+	attPos = 1.0022248,-0.5142048,0.0122727752
+	attPos0 = -0.436539322,0.114205249,-0.436537802
+	rot = 0.707106411,-7.89761543E-07,-8.35261403E-07,0.707107306
+	attRot = -0.707106709,0,0,-0.707106709
+	attRot0 = -0.653281629,0.270598114,-0.270597845,-0.65328145
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Heaviest
+	rigidAttachment = False
+	istg = -1
+	resPri = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	link = SmallGearBay_4293670776
+	sym = miniFuselage_4294627576
+	sym = miniFuselage_4294619470
+	sym = miniFuselage_4294619432
+	srfN = srfAttach,miniFuselage_4293928588
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = LiquidFuel
+		amount = 50
+		maxAmount = 50
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = SmallGearBay_4293670776
+	partName = Part
+	pos = -1.20048869,15.0797281,-0.189889282
+	attPos = -0.600000262,0.00204059388,-0.304782182
+	attPos0 = 1.6996637E-08,-0.00204032566,0.304782927
+	rot = 4.91738319E-07,-0.707106173,1.28149986E-06,-0.707107663
+	attRot = 0,-0.707106709,0,-0.707106709
+	attRot0 = 0.5,-0.50000006,0.49999994,-0.5
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = ForceHeaviest
@@ -1209,10 +1436,10 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = miniLandingLeg_4294579696
-	sym = miniLandingLeg_4293928036
-	sym = miniLandingLeg_4293927632
-	srfN = srfAttach,miniFuselage_4293928588
+	sym = SmallGearBay_4293670068
+	sym = SmallGearBay_4293669832
+	sym = SmallGearBay_4293669596
+	srfN = srfAttach,miniFuselage_4294619508
 	EVENTS
 	{
 	}
@@ -1226,9 +1453,9 @@ PART
 	{
 		name = ModuleWheelBase
 		isEnabled = True
-		wheelType = LEG
+		wheelType = FREE
 		isGrounded = False
-		autoFriction = False
+		autoFriction = True
 		frictionMultiplier = 1
 		stagingEnabled = True
 		EVENTS
@@ -1266,6 +1493,59 @@ PART
 	}
 	MODULE
 	{
+		name = ModuleWheelSteering
+		isEnabled = True
+		steeringEnabled = True
+		steeringInvert = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleWheelBrakes
+		isEnabled = True
+		brakeTweakable = 100
+		brakeInput = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			BrakeAction
+			{
+				actionGroup = Brakes
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleStatusLight
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = ModuleWheelDeployment
 		isEnabled = True
 		shieldedCanDeploy = False
@@ -1288,7 +1568,7 @@ PART
 	}
 	MODULE
 	{
-		name = ModuleWheelLock
+		name = FXModuleConstrainPosition
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -1296,6 +1576,68 @@ PART
 		}
 		ACTIONS
 		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = FXModuleLookAtConstraint
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleTestSubject
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleLight
+		isEnabled = True
+		isOn = False
+		uiWriteLock = False
+		lightR = 1
+		lightG = 1
+		lightB = 1
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleLightAction
+			{
+				actionGroup = Light
+			}
+			LightOnAction
+			{
+				actionGroup = None
+			}
+			LightOffAction
+			{
+				actionGroup = None
+			}
 		}
 		UPGRADESAPPLIED
 		{
@@ -1317,54 +1659,35 @@ PART
 		{
 		}
 	}
-}
-PART
-{
-	part = miniFuselage_4294619508
-	partName = Part
-	pos = -0.600488424,15.0797281,-0.189889014
-	attPos = 1.0022248,-0.5142048,0.0122727752
-	attPos0 = -0.436539322,0.114205249,-0.436537802
-	rot = 0.707106709,-4.02331352E-07,-2.36062206E-07,0.707107127
-	attRot = -0.707106709,0,0,-0.707106709
-	attRot0 = -0.653281629,0.270598114,-0.270597845,-0.65328145
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Heaviest
-	rigidAttachment = False
-	istg = -1
-	resPri = 0
-	dstg = 0
-	sidx = -1
-	sqor = -1
-	sepI = -1
-	attm = 1
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	sym = miniFuselage_4294627576
-	sym = miniFuselage_4294619470
-	sym = miniFuselage_4294619432
-	srfN = srfAttach,miniFuselage_4293928588
-	EVENTS
+	MODULE
 	{
+		name = ModuleDragModifier
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
 	}
-	ACTIONS
+	MODULE
 	{
-	}
-	PARTDATA
-	{
-	}
-	RESOURCE
-	{
-		name = LiquidFuel
-		amount = 50
-		maxAmount = 50
-		flowState = True
-		isTweakable = True
-		hideFlow = False
-		isVisible = True
-		flowMode = Both
+		name = ModuleDragModifier
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
 	}
 }
 PART
@@ -1411,7 +1734,7 @@ PART
 {
 	part = strutCube_4293928216
 	partName = Part
-	pos = 0.478569567,15.0797281,0.310111105
+	pos = 0.478569567,15.0797281,0.310112894
 	attPos = 0,0,0
 	attPos0 = 3.5527122E-15,0.25746876,3.06926573E-08
 	rot = 0.65328151,-0.653281569,0.270598114,-0.270598054
@@ -1450,7 +1773,7 @@ PART
 {
 	part = miniFuselage_4293928184
 	partName = Part
-	pos = 0.678570092,15.4797277,0.51011169
+	pos = 0.678571701,15.4797277,0.510115385
 	attPos = -0.319509685,0.140156627,0.0464711003
 	attPos0 = -0.0804901347,-0.422999889,-0.0464709215
 	rot = 3.27825546E-07,-0.923879623,-2.38418579E-07,-0.382683575
@@ -1472,7 +1795,6 @@ PART
 	modSize = 0,0,0
 	link = miniJetEngine_4293928146
 	link = miniIntake_4293928080
-	link = miniLandingLeg_4293928036
 	link = miniFuselage_4294619470
 	sym = miniFuselage_4294613374
 	sym = miniFuselage_4293928588
@@ -1505,21 +1827,21 @@ PART
 {
 	part = miniJetEngine_4293928146
 	partName = Part
-	pos = 0.678570271,15.0109777,0.510112345
+	pos = 0.67857188,15.0109777,0.510115385
 	attPos = 0,0,0
 	attPos0 = -2.68221157E-07,-0.468750119,-7.14568271E-09
-	rot = -2.68220901E-07,-0.923879623,-5.96046448E-08,-0.382683635
+	rot = -2.98023224E-07,-0.923879623,-8.94069672E-08,-0.382683605
 	attRot = 0,0,0,1
 	attRot0 = 1.05367128E-07,-1.05367128E-07,5.96046412E-08,1
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = False
-	istg = 0
+	istg = 1
 	resPri = 0
 	dstg = 0
 	sidx = 0
-	sqor = 0
+	sqor = 1
 	sepI = -1
 	attm = 0
 	modCost = 0
@@ -1622,7 +1944,7 @@ PART
 {
 	part = miniIntake_4293928080
 	partName = Part
-	pos = 0.678570271,15.9484806,0.510111213
+	pos = 0.67857182,15.9484806,0.510114729
 	attPos = 0,0,0
 	attPos0 = -1.49011754E-07,0.468750149,1.80371686E-07
 	rot = 2.38418579E-07,-0.382683069,-4.7833305E-07,-0.923879862
@@ -1689,14 +2011,64 @@ PART
 }
 PART
 {
-	part = miniLandingLeg_4293928036
+	part = miniFuselage_4294619470
 	partName = Part
-	pos = 0.914322436,15.2340698,0.745864928
-	attPos = 0,0,0
-	attPos0 = -0.333402306,-0.24565801,1.60149497E-07
-	rot = -8.94069672E-08,-0.923879564,-2.38418579E-07,-0.382683694
-	attRot = 0,0,0,1
-	attRot0 = -4.21468336E-08,8.42936885E-08,2.22044626E-15,1
+	pos = -0.0214312226,15.0797281,0.410113752
+	attPos = 1.00222456,-0.514204919,0.0122731328
+	attPos0 = -0.436539054,0.114205629,-0.43653819
+	rot = 0.499999702,0.500000477,-0.499999821,0.500000238
+	attRot = -0.707106709,0,0,-0.707106709
+	attRot0 = -0.653281629,0.270598114,-0.270597875,-0.65328151
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Heaviest
+	rigidAttachment = False
+	istg = -1
+	resPri = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	link = SmallGearBay_4293669832
+	sym = miniFuselage_4294627576
+	sym = miniFuselage_4294619508
+	sym = miniFuselage_4294619432
+	srfN = srfAttach,miniFuselage_4293928184
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = LiquidFuel
+		amount = 50
+		maxAmount = 50
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = SmallGearBay_4293669832
+	partName = Part
+	pos = -0.0214289278,15.0797272,1.01011717
+	attPos = -0.60000062,0.00204056478,-0.304782033
+	attPos0 = -6.49597354E-08,-0.00204023696,0.304782987
+	rot = 8.49366188E-07,-1.00000012,2.08616257E-07,1.63912773E-07
+	attRot = 0,-0.707106709,0,-0.707106709
+	attRot0 = 0.500000119,-0.5,0.5,-0.499999881
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = ForceHeaviest
@@ -1711,10 +2083,10 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = miniLandingLeg_4294579696
-	sym = miniLandingLeg_4293928440
-	sym = miniLandingLeg_4293927632
-	srfN = srfAttach,miniFuselage_4293928184
+	sym = SmallGearBay_4293670776
+	sym = SmallGearBay_4293670068
+	sym = SmallGearBay_4293669596
+	srfN = srfAttach,miniFuselage_4294619470
 	EVENTS
 	{
 	}
@@ -1728,9 +2100,9 @@ PART
 	{
 		name = ModuleWheelBase
 		isEnabled = True
-		wheelType = LEG
+		wheelType = FREE
 		isGrounded = False
-		autoFriction = False
+		autoFriction = True
 		frictionMultiplier = 1
 		stagingEnabled = True
 		EVENTS
@@ -1768,6 +2140,59 @@ PART
 	}
 	MODULE
 	{
+		name = ModuleWheelSteering
+		isEnabled = True
+		steeringEnabled = True
+		steeringInvert = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleWheelBrakes
+		isEnabled = True
+		brakeTweakable = 100
+		brakeInput = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			BrakeAction
+			{
+				actionGroup = Brakes
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleStatusLight
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = ModuleWheelDeployment
 		isEnabled = True
 		shieldedCanDeploy = False
@@ -1790,7 +2215,7 @@ PART
 	}
 	MODULE
 	{
-		name = ModuleWheelLock
+		name = FXModuleConstrainPosition
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -1798,6 +2223,68 @@ PART
 		}
 		ACTIONS
 		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = FXModuleLookAtConstraint
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleTestSubject
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleLight
+		isEnabled = True
+		isOn = False
+		uiWriteLock = False
+		lightR = 1
+		lightG = 1
+		lightB = 1
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleLightAction
+			{
+				actionGroup = Light
+			}
+			LightOnAction
+			{
+				actionGroup = None
+			}
+			LightOffAction
+			{
+				actionGroup = None
+			}
 		}
 		UPGRADESAPPLIED
 		{
@@ -1819,54 +2306,35 @@ PART
 		{
 		}
 	}
-}
-PART
-{
-	part = miniFuselage_4294619470
-	partName = Part
-	pos = -0.0214309245,15.0797281,0.410111845
-	attPos = 1.00222456,-0.514204919,0.0122731328
-	attPos0 = -0.436539054,0.114205629,-0.43653819
-	rot = 0.499999762,0.500000238,-0.499999911,0.500000358
-	attRot = -0.707106709,0,0,-0.707106709
-	attRot0 = -0.653281629,0.270598114,-0.270597875,-0.65328151
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Heaviest
-	rigidAttachment = False
-	istg = -1
-	resPri = 0
-	dstg = 0
-	sidx = -1
-	sqor = -1
-	sepI = -1
-	attm = 1
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	sym = miniFuselage_4294627576
-	sym = miniFuselage_4294619508
-	sym = miniFuselage_4294619432
-	srfN = srfAttach,miniFuselage_4293928184
-	EVENTS
+	MODULE
 	{
+		name = ModuleDragModifier
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
 	}
-	ACTIONS
+	MODULE
 	{
-	}
-	PARTDATA
-	{
-	}
-	RESOURCE
-	{
-		name = LiquidFuel
-		amount = 50
-		maxAmount = 50
-		flowState = True
-		isTweakable = True
-		hideFlow = False
-		isVisible = True
-		flowMode = Both
+		name = ModuleDragModifier
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
 	}
 }
 PART
@@ -1913,7 +2381,7 @@ PART
 {
 	part = strutCube_4293927812
 	partName = Part
-	pos = 0.478569508,15.0797281,-0.668946683
+	pos = 0.478569567,15.0797281,-0.668946803
 	attPos = 0,0,0
 	attPos0 = 3.5527122E-15,0.25746876,3.06926573E-08
 	rot = 0.65328145,-0.653281748,-0.270597845,0.270598114
@@ -1952,7 +2420,7 @@ PART
 {
 	part = miniFuselage_4293927780
 	partName = Part
-	pos = 0.678569794,15.4797277,-0.868947744
+	pos = 0.678571999,15.4797277,-0.868953526
 	attPos = -0.319509745,0.140157074,0.0464710407
 	attPos0 = -0.0804901347,-0.422999889,-0.0464709215
 	rot = -7.4505806E-08,-0.923879802,-2.68220901E-07,0.382683277
@@ -1974,7 +2442,6 @@ PART
 	modSize = 0,0,0
 	link = miniJetEngine_4293927742
 	link = miniIntake_4293927676
-	link = miniLandingLeg_4293927632
 	link = miniFuselage_4294619432
 	sym = miniFuselage_4294613374
 	sym = miniFuselage_4293928588
@@ -2007,7 +2474,7 @@ PART
 {
 	part = miniJetEngine_4293927742
 	partName = Part
-	pos = 0.678570867,15.0109777,-0.86894691
+	pos = 0.678574681,15.0109777,-0.868950129
 	attPos = 0,0,0
 	attPos0 = -2.68221157E-07,-0.468750119,-7.14568271E-09
 	rot = -7.4505806E-08,-0.923879743,3.57627869E-07,0.382683277
@@ -2017,11 +2484,11 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = False
-	istg = 0
+	istg = 1
 	resPri = 0
 	dstg = 0
 	sidx = 0
-	sqor = 0
+	sqor = 1
 	sepI = -1
 	attm = 0
 	modCost = 0
@@ -2124,7 +2591,7 @@ PART
 {
 	part = miniIntake_4293927676
 	partName = Part
-	pos = 0.678568721,15.9484854,-0.868948221
+	pos = 0.67856878,15.9485054,-0.868955493
 	attPos = 0,0,0
 	attPos0 = -1.49011754E-07,0.468750149,1.80371686E-07
 	rot = -4.47034836E-08,-0.923879623,-2.06160749E-07,-0.382683814
@@ -2191,14 +2658,64 @@ PART
 }
 PART
 {
-	part = miniLandingLeg_4293927632
+	part = miniFuselage_4294619432
 	partName = Part
-	pos = 0.914323449,15.2340698,-1.10470033
-	attPos = 0,0,0
-	attPos0 = -0.333402306,-0.24565801,1.60149497E-07
-	rot = -1.93715096E-07,-0.923879743,1.04308128E-07,0.382683605
-	attRot = 0,0,0,1
-	attRot0 = -4.21468336E-08,8.42936885E-08,2.22044626E-15,1
+	pos = 0.578567266,15.0797281,-0.168936819
+	attPos = 1.00222516,-0.514205396,0.0122728646
+	attPos0 = -0.436539412,0.114205584,-0.436538011
+	rot = -5.66244125E-07,0.707106829,-0.707107008,6.80610924E-07
+	attRot = -0.707106709,0,0,-0.707106709
+	attRot0 = -0.653281569,0.270598143,-0.270597935,-0.65328151
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Heaviest
+	rigidAttachment = False
+	istg = -1
+	resPri = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	link = SmallGearBay_4293669596
+	sym = miniFuselage_4294627576
+	sym = miniFuselage_4294619508
+	sym = miniFuselage_4294619470
+	srfN = srfAttach,miniFuselage_4293927780
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = LiquidFuel
+		amount = 50
+		maxAmount = 50
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = SmallGearBay_4293669596
+	partName = Part
+	pos = 1.17857587,15.0797272,-0.168939024
+	attPos = -0.600000739,0.002040833,-0.30478251
+	attPos0 = 1.04890113E-07,-0.0020407734,0.30478394
+	rot = 3.65078449E-07,-0.707106769,3.12924385E-07,0.707107067
+	attRot = 0,-0.707106709,0,-0.707106709
+	attRot0 = 0.50000006,-0.49999994,0.5,-0.5
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = ForceHeaviest
@@ -2213,10 +2730,10 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = miniLandingLeg_4294579696
-	sym = miniLandingLeg_4293928440
-	sym = miniLandingLeg_4293928036
-	srfN = srfAttach,miniFuselage_4293927780
+	sym = SmallGearBay_4293670776
+	sym = SmallGearBay_4293670068
+	sym = SmallGearBay_4293669832
+	srfN = srfAttach,miniFuselage_4294619432
 	EVENTS
 	{
 	}
@@ -2230,9 +2747,9 @@ PART
 	{
 		name = ModuleWheelBase
 		isEnabled = True
-		wheelType = LEG
+		wheelType = FREE
 		isGrounded = False
-		autoFriction = False
+		autoFriction = True
 		frictionMultiplier = 1
 		stagingEnabled = True
 		EVENTS
@@ -2270,6 +2787,59 @@ PART
 	}
 	MODULE
 	{
+		name = ModuleWheelSteering
+		isEnabled = True
+		steeringEnabled = True
+		steeringInvert = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleWheelBrakes
+		isEnabled = True
+		brakeTweakable = 100
+		brakeInput = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			BrakeAction
+			{
+				actionGroup = Brakes
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleStatusLight
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = ModuleWheelDeployment
 		isEnabled = True
 		shieldedCanDeploy = False
@@ -2292,7 +2862,7 @@ PART
 	}
 	MODULE
 	{
-		name = ModuleWheelLock
+		name = FXModuleConstrainPosition
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -2300,6 +2870,68 @@ PART
 		}
 		ACTIONS
 		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = FXModuleLookAtConstraint
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleTestSubject
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleLight
+		isEnabled = True
+		isOn = False
+		uiWriteLock = False
+		lightR = 1
+		lightG = 1
+		lightB = 1
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleLightAction
+			{
+				actionGroup = Light
+			}
+			LightOnAction
+			{
+				actionGroup = None
+			}
+			LightOffAction
+			{
+				actionGroup = None
+			}
 		}
 		UPGRADESAPPLIED
 		{
@@ -2321,66 +2953,47 @@ PART
 		{
 		}
 	}
-}
-PART
-{
-	part = miniFuselage_4294619432
-	partName = Part
-	pos = 0.578569472,15.0797281,-0.168944865
-	attPos = 1.00222516,-0.514205396,0.0122728646
-	attPos0 = -0.436539412,0.114205584,-0.436538011
-	rot = -1.1920929E-07,0.707107067,-0.707106769,2.43149941E-07
-	attRot = -0.707106709,0,0,-0.707106709
-	attRot0 = -0.653281569,0.270598143,-0.270597935,-0.65328151
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Heaviest
-	rigidAttachment = False
-	istg = -1
-	resPri = 0
-	dstg = 0
-	sidx = -1
-	sqor = -1
-	sepI = -1
-	attm = 1
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	sym = miniFuselage_4294627576
-	sym = miniFuselage_4294619508
-	sym = miniFuselage_4294619470
-	srfN = srfAttach,miniFuselage_4293927780
-	EVENTS
+	MODULE
 	{
+		name = ModuleDragModifier
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
 	}
-	ACTIONS
+	MODULE
 	{
-	}
-	PARTDATA
-	{
-	}
-	RESOURCE
-	{
-		name = LiquidFuel
-		amount = 50
-		maxAmount = 50
-		flowState = True
-		isTweakable = True
-		hideFlow = False
-		isVisible = True
-		flowMode = Both
+		name = ModuleDragModifier
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
 	}
 }
 PART
 {
-	part = seatExternalCmd_4290576996
+	part = advSasModule_4292121132
 	partName = Part
-	pos = -0.023367675,15.6541319,-0.167009607
-	attPos = 0,0,0
-	attPos0 = -0.0124083925,0.250697136,0.0124083608
-	rot = 0,0.707106709,-0.707106829,5.30874935E-16
+	pos = -0.0109592825,15.0512609,-0.179417968
+	attPos = 0,0.290138245,0
+	attPos0 = 0,-0.290138245,0
+	rot = 0,0,0,1
 	attRot = 0,0,0,1
-	attRot0 = 0,-0.707106709,0.707106829,-5.30874935E-16
+	attRot0 = 0,0,0,1
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Off
@@ -2391,11 +3004,13 @@ PART
 	sidx = -1
 	sqor = -1
 	sepI = -1
-	attm = 1
+	attm = 0
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	srfN = srfAttach,probeCoreOcto2_4290416894
+	link = stackDecouplerMini_4292720160
+	attN = top,sasModule_4290085366
+	attN = bottom,stackDecouplerMini_4292720160
 	EVENTS
 	{
 	}
@@ -2407,7 +3022,128 @@ PART
 	}
 	MODULE
 	{
-		name = KerbalSeat
+		name = ModuleReactionWheel
+		isEnabled = True
+		actuatorModeCycle = 0
+		authorityLimiter = 100
+		stateString = Active
+		stagingEnabled = True
+		WheelState = Active
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			CycleAction
+			{
+				actionGroup = None
+			}
+			Activate
+			{
+				actionGroup = None
+			}
+			Deactivate
+			{
+				actionGroup = None
+			}
+			Toggle
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = stackDecouplerMini_4292720160
+	partName = Part
+	pos = -0.0109592825,14.7763243,-0.179417968
+	attPos = 0,0,0
+	attPos0 = 0,-0.274936676,0
+	rot = 0,0,0,1
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 0
+	resPri = 0
+	dstg = 1
+	sidx = 0
+	sqor = 0
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	link = landerCabinSmall_4292730798
+	attN = bottom,landerCabinSmall_4292730798
+	attN = top,advSasModule_4292121132
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleDecouple
+		isEnabled = True
+		ejectionForcePercent = 100
+		isDecoupled = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			DecoupleAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleToggleCrossfeed
+		isEnabled = True
+		crossfeedStatus = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+			}
+			EnableAction
+			{
+				actionGroup = None
+			}
+			DisableAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleTestSubject
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -2415,6 +3151,200 @@ PART
 		}
 		ACTIONS
 		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = landerCabinSmall_4292730798
+	partName = Part
+	pos = -0.0109592825,14.0754147,-0.179417968
+	attPos = 0,0,0
+	attPos0 = 0,-0.700909615,0
+	rot = 0,0,0,1
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 0
+	resPri = 0
+	dstg = 2
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	attN = top,stackDecouplerMini_4292720160
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleCommand
+		isEnabled = True
+		hibernation = False
+		hibernateOnWarp = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			HibernateToggle
+			{
+				actionGroup = None
+				active = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleReactionWheel
+		isEnabled = True
+		actuatorModeCycle = 0
+		authorityLimiter = 100
+		stateString = Active
+		stagingEnabled = True
+		WheelState = Active
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			CycleAction
+			{
+				actionGroup = None
+			}
+			Activate
+			{
+				actionGroup = None
+			}
+			Deactivate
+			{
+				actionGroup = None
+			}
+			Toggle
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleColorChanger
+		isEnabled = True
+		animState = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = Light
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleScienceExperiment
+		isEnabled = True
+		Deployed = False
+		Inoperable = False
+		cooldownToGo = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			DeployAction
+			{
+				actionGroup = None
+			}
+			ResetAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleScienceContainer
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			CollectAllAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = FlagDecal
+		isEnabled = True
+		flagDisplayed = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleDataTransmitter
+		isEnabled = True
+		xmitIncomplete = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			StartTransmissionAction
+			{
+				actionGroup = None
+				active = False
+			}
 		}
 		UPGRADESAPPLIED
 		{
@@ -2439,46 +3369,22 @@ PART
 		{
 		}
 	}
-}
-PART
-{
-	part = batteryBankMini_4294434798
-	partName = Part
-	pos = -0.0109592825,14.8601494,-0.179417968
-	attPos = 0,0,0
-	attPos0 = 0,-0.191111565,0
-	rot = 0,0,0,1
-	attRot = 0,0,0,1
-	attRot0 = 0,0,0,1
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = -1
-	resPri = 0
-	dstg = 0
-	sidx = -1
-	sqor = -1
-	sepI = -1
-	attm = 0
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	attN = top,sasModule_4290085366
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
 	RESOURCE
 	{
 		name = ElectricCharge
-		amount = 200
-		maxAmount = 200
+		amount = 50
+		maxAmount = 50
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = MonoPropellant
+		amount = 15
+		maxAmount = 15
 		flowState = True
 		isTweakable = True
 		hideFlow = False
