@@ -2,7 +2,7 @@ ship = Orbiter 1
 version = 1.4.5
 description = 
 type = VAB
-size = 1.58638012,17.6900024,1.40129507
+size = 1.71020031,17.6900024,1.40129507
 steamPublishedFileId = 0
 persistentId = 2842233532
 rot = 0,0,0,0
@@ -44,6 +44,7 @@ PART
 	link = sensorBarometer_4294598398
 	link = sensorBarometer_4294598330
 	link = HeatShield1_4294630110
+	link = longAntenna_4294485114
 	attN = bottom,HeatShield1_4294630110_0|-0.4050379|0
 	attN = top,parachuteSingle_4294622430_0|0.6423756|0
 	EVENTS
@@ -1301,7 +1302,7 @@ PART
 	dstg = 1
 	sidx = -1
 	sqor = -1
-	sepI = -1
+	sepI = 1
 	attm = 0
 	modCost = 0
 	modMass = 0
@@ -2444,5 +2445,96 @@ PART
 		hideFlow = False
 		isVisible = True
 		flowMode = Both
+	}
+}
+PART
+{
+	part = longAntenna_4294485114
+	partName = Part
+	persistentId = 780092113
+	pos = -0.55441457,14.8293791,-0.148554906
+	attPos = 0,0,0
+	attPos0 = -0.55441457,-0.170620918,-0.148554906
+	rot = 0.34491533,-0.653725564,0.449502379,0.501621306
+	attRot = 0,0,0,1
+	attRot0 = 0.34491533,-0.653725564,0.449502379,0.501621306
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = -1
+	resPri = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = -1
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	srfN = srfAttach,mk1pod_4294636148
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleDeployableAntenna
+		isEnabled = True
+		currentRotation = (-0.707106829, 0, 0, 0.707106829)
+		storedAnimationTime = 0
+		storedAnimationSpeed = 1
+		deployState = RETRACTED
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ExtendPanelsAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ExtendAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			RetractAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleDataTransmitter
+		isEnabled = True
+		xmitIncomplete = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			StartTransmissionAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
 	}
 }
