@@ -16,7 +16,7 @@ PART
 {
 	part = probeCoreSphere.v2_4294225728
 	partName = Part
-	persistentId = 1816807087
+	persistentId = 3970331232
 	pos = -0.0218606479,10.0069818,0.40533644
 	attPos = 0,0,0
 	attPos0 = -0.0218606479,10.0069818,0.40533644
@@ -173,7 +173,7 @@ PART
 {
 	part = strutCube_4292655016
 	partName = Part
-	persistentId = 1653789137
+	persistentId = 2919575176
 	pos = -0.0218606479,10.2069817,0.00533595681
 	attPos = 0,0.00321424007,-0.199999839
 	attPos0 = 0,-0.403214455,5.96046448E-08
@@ -227,7 +227,7 @@ PART
 {
 	part = structuralMiniNode_4292666114
 	partName = Part
-	persistentId = 3076262525
+	persistentId = 1940081504
 	pos = -0.0218606479,10.2069817,-0.305725634
 	attPos = 0,0,0
 	attPos0 = 0.1279203,10.7411098,-0.189601094
@@ -250,11 +250,12 @@ PART
 	modMass = 0
 	modSize = 0,0,0
 	link = strutCube_4292434784
+	link = Decoupler.0_4292445502
 	link = roverBody_4292702166
 	attN = right,Null_0_0.182325795|0|0_1|0|0_0.182325795|0|0_1|0|0
 	attN = left,Null_0_-0.182325795|0|0_-1|0|0_-0.182325795|0|0_-1|0|0
 	attN = back,roverBody_4292702166_0|0|0.182325795_0|0|1_0|0|0.182325795_0|0|1
-	attN = front,Null_0_0|0|-0.182325795_0|0|-1_0|0|-0.182325795_0|0|-1
+	attN = front,Decoupler.0_4292445502_0|0|-0.182325795_0|0|-1_0|0|-0.182325795_0|0|-1
 	attN = top,strutCube_4292655016_0|0.182325795|0_0|1|0_0|0.182325795|0_0|1|0
 	attN = bottom,strutCube_4292434784_0|-0.182325795|0_0|-1|0_0|-0.182325795|0_0|-1|0
 	EVENTS
@@ -286,7 +287,7 @@ PART
 {
 	part = strutCube_4292434784
 	partName = Part
-	persistentId = 157338162
+	persistentId = 1110578809
 	pos = -0.0218606479,10.2069817,-0.616786778
 	attPos = 0,0,0
 	attPos0 = 0,-0.311060399,3.7424531E-08
@@ -337,9 +338,130 @@ PART
 }
 PART
 {
+	part = Decoupler.0_4292445502
+	partName = Part
+	persistentId = 894515698
+	pos = -0.0218606479,10.421813,-0.305725634
+	attPos = 0,0,0
+	attPos0 = 0.0982505381,11.2507811,-0.576389194
+	rot = 1.00000012,0,0,0
+	attRot = 0.707106709,0,0,0.707106709
+	attRot0 = 0.707106829,0,0,0.707106829
+	mir = 1,1,1
+	symMethod = Mirror
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 0
+	resPri = 0
+	dstg = 1
+	sidx = 0
+	sqor = 0
+	sepI = 0
+	attm = 0
+	sameVesselCollision = False
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	attN = top,structuralMiniNode_4292666114_0|0.0325005427|0_0|1|0_0|0.0325005427|0_0|1|0
+	attN = bottom,Null_0_0|-0.0324999988|0_0|-1|0_0|-0.0324999988|0_0|-1|0
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleDecouple
+		isEnabled = True
+		ejectionForcePercent = 100
+		isDecoupled = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			DecoupleAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleToggleCrossfeed
+		isEnabled = True
+		crossfeedStatus = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			EnableAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			DisableAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleTestSubject
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
 	part = roverBody_4292702166
 	partName = Part
-	persistentId = 2892726782
+	persistentId = 3447478586
 	pos = -0.0218606479,9.80698204,-0.705726445
 	attPos = 0,-0.399999678,-0.00646862388
 	attPos0 = 0,-1.78813934E-07,0.406467915
@@ -365,15 +487,6 @@ PART
 	link = structuralIBeam3_4292641116
 	link = sensorGravimeter_4292504604
 	link = sensorThermometer_4292498146
-	link = RobotArmScanner.S1_4292614456
-	link = sensorBarometer_4292609790
-	link = sensorThermometer_4292609390
-	link = GooExperiment_4292609112
-	link = sensorAccelerometer_4292608182
-	link = GooExperiment_4292607876
-	link = sensorBarometer_4292607590
-	link = sensorAccelerometer_4292607358
-	link = sensorThermometer_4292607074
 	attN = bottom,Null_0_0|-0.224142507|0_0|-1|0_0|-0.224142507|0_0|-1|0
 	attN = top,structuralMiniNode_4292666114_0|0.224142507|0_0|1|0_0|0.224142507|0_0|1|0
 	EVENTS
@@ -521,7 +634,7 @@ PART
 {
 	part = structuralIBeam3_4292668276
 	partName = Part
-	persistentId = 684700158
+	persistentId = 3477859317
 	pos = -0.621860683,9.80698204,-0.705726445
 	attPos = -0.0968167186,0.0701761395,-0.802465916
 	attPos0 = -0.503183305,-0.0701761395,0.802465796
@@ -582,7 +695,7 @@ PART
 {
 	part = roverWheel2_4292645074
 	partName = Part
-	persistentId = 3982013903
+	persistentId = 946669009
 	pos = -0.957185566,9.28213024,-0.0755388141
 	attPos = 0,0,0
 	attPos0 = 0.335323215,0.630182087,-0.524852097
@@ -809,7 +922,7 @@ PART
 {
 	part = roverWheel2_4292643558
 	partName = Part
-	persistentId = 2691631937
+	persistentId = 2473655942
 	pos = -0.957185447,9.2821312,-0.494837105
 	attPos = 0,0,0
 	attPos0 = 0.335323095,0.210885793,-0.524851978
@@ -1036,7 +1149,7 @@ PART
 {
 	part = roverWheel2_4292644116
 	partName = Part
-	persistentId = 2547687489
+	persistentId = 327214342
 	pos = -0.957061589,9.28213215,-1.33651137
 	attPos = 0,0,0
 	attPos0 = 0.335199088,-0.630783319,-0.524851918
@@ -1263,7 +1376,7 @@ PART
 {
 	part = roverWheel2_4292643798
 	partName = Part
-	persistentId = 3682364704
+	persistentId = 3686529800
 	pos = -0.957073748,9.2821312,-0.9136011
 	attPos = 0,0,0
 	attPos0 = 0.335211396,-0.207874998,-0.524851978
@@ -1490,7 +1603,7 @@ PART
 {
 	part = batteryBankMini_4292637912
 	partName = Part
-	persistentId = 3560939025
+	persistentId = 204084947
 	pos = -0.621860683,9.80698204,-1.60820031
 	attPos = 0,0,0
 	attPos0 = 2.16667195E-15,-0.902466416,1.25757694E-07
@@ -1555,7 +1668,7 @@ PART
 {
 	part = LgRadialSolarPanel_4292545402
 	partName = Part
-	persistentId = 462080389
+	persistentId = 3567317780
 	pos = -0.686304152,9.90899277,-0.705835044
 	attPos = 0,0,0
 	attPos0 = 0.0644432008,-0.000107765198,0.102001198
@@ -1647,7 +1760,7 @@ PART
 {
 	part = structuralIBeam3_4292641116
 	partName = Part
-	persistentId = 3052960076
+	persistentId = 3388482581
 	pos = 0.578139246,9.80698204,-0.705726683
 	attPos = 0.0968167186,0.0701761395,-0.802466214
 	attPos0 = 0.503183305,-0.0701761395,0.802465916
@@ -1708,7 +1821,7 @@ PART
 {
 	part = roverWheel2_4292641088
 	partName = Part
-	persistentId = 2290351580
+	persistentId = 3824052719
 	pos = 0.913464248,9.28213024,-0.0755372643
 	attPos = 0,0,0
 	attPos0 = 0.335323215,0.630182087,-0.524852097
@@ -1935,7 +2048,7 @@ PART
 {
 	part = roverWheel2_4292640954
 	partName = Part
-	persistentId = 1214612219
+	persistentId = 2798754180
 	pos = 0.913464248,9.2821312,-0.494836271
 	attPos = 0,0,0
 	attPos0 = 0.335323095,0.210885793,-0.524851978
@@ -2162,7 +2275,7 @@ PART
 {
 	part = roverWheel2_4292640820
 	partName = Part
-	persistentId = 1817499354
+	persistentId = 715676780
 	pos = 0.913340271,9.28213215,-1.33651233
 	attPos = 0,0,0
 	attPos0 = 0.335199088,-0.630783319,-0.524851918
@@ -2389,7 +2502,7 @@ PART
 {
 	part = roverWheel2_4292640686
 	partName = Part
-	persistentId = 3002727229
+	persistentId = 2609714077
 	pos = 0.913352311,9.28213215,-0.91360122
 	attPos = 0,0,0
 	attPos0 = 0.335211396,-0.207874998,-0.524851978
@@ -2616,7 +2729,7 @@ PART
 {
 	part = batteryBankMini_4292618916
 	partName = Part
-	persistentId = 3803749534
+	persistentId = 679826107
 	pos = 0.578139246,9.80698204,-1.60820365
 	attPos = 0,0,0
 	attPos0 = 3.63077793E-14,-0.902466416,4.48504807E-07
@@ -2681,7 +2794,7 @@ PART
 {
 	part = LgRadialSolarPanel_4292544846
 	partName = Part
-	persistentId = 3775343339
+	persistentId = 411644011
 	pos = 0.642583072,9.90899277,-0.705835283
 	attPos = 0,0,0
 	attPos0 = -0.0644432008,-0.000107555999,0.102001198
@@ -2773,7 +2886,7 @@ PART
 {
 	part = sensorGravimeter_4292504604
 	partName = Part
-	persistentId = 3661863816
+	persistentId = 2255550364
 	pos = -0.221860662,9.80698204,-1.45149517
 	attPos = -0.200000107,-0.0953932181,-0.00996994972
 	attPos0 = 6.43252989E-08,0.0953932181,-0.735795975
@@ -2874,7 +2987,7 @@ PART
 {
 	part = sensorThermometer_4292498146
 	partName = Part
-	persistentId = 1908644631
+	persistentId = 113526848
 	pos = 0.178139448,9.80698204,-1.4366293
 	attPos = 0.199999899,0.05971241,0.00482946588
 	attPos0 = 6.43196074E-08,-0.0597124211,-0.735730886
@@ -2975,7 +3088,7 @@ PART
 {
 	part = spotLight1_4292573090
 	partName = Part
-	persistentId = 2123567188
+	persistentId = 3905227778
 	pos = -0.456331402,10.441453,0.632490396
 	attPos = 0.0289678872,-0.00948739052,0.0289678574
 	attPos0 = -0.46343863,0.236641198,-0.463439047
@@ -3096,7 +3209,7 @@ PART
 {
 	part = spotLight1_4294207630
 	partName = Part
-	persistentId = 4294434829
+	persistentId = 3105192536
 	pos = 0.412610084,10.441453,0.632490396
 	attPos = -0.0289678872,-0.00948733091,0.028967917
 	attPos0 = 0.46343863,0.236641139,-0.463439107
@@ -3217,7 +3330,7 @@ PART
 {
 	part = longAntenna_4292599214
 	partName = Part
-	persistentId = 2823558889
+	persistentId = 426621143
 	pos = -0.29726392,10.2823849,0.3717435
 	attPos = 0,0,0
 	attPos0 = -0.275403261,-0.0335929692,-0.275403053
@@ -3326,7 +3439,7 @@ PART
 {
 	part = longAntenna_4294207316
 	partName = Part
-	persistentId = 1030942219
+	persistentId = 1995696042
 	pos = 0.253542602,10.2823849,0.37174347
 	attPos = 0,0,0
 	attPos0 = 0.275403261,-0.033592999,-0.275403053
@@ -3421,979 +3534,6 @@ PART
 		ACTIONS
 		{
 			StartTransmissionAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-}
-PART
-{
-	part = RobotArmScanner.S1_4292614456
-	partName = Part
-	persistentId = 3569903909
-	pos = -0.226571172,9.8338995,0.0582638383
-	attPos = 0,0,0
-	attPos0 = -0.204710528,0.0269174036,0.763989866
-	rot = 0,-0.793353438,0,0.608761489
-	attRot = -0.49999994,-0.49999994,0.49999994,0.49999994
-	attRot0 = 0,0.793353319,0,-0.60876143
-	mir = 1,1,1
-	symMethod = Mirror
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = -1
-	resPri = 0
-	dstg = 0
-	sidx = -1
-	sqor = -1
-	sepI = -1
-	attm = 1
-	sameVesselCollision = False
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	srfN = srfAttach,roverBody_4292702166,collider,0|0|0,0|-1|0,0|0|0
-	attN = bottom,Null_0_0|0|0_0|-1|0_0|0|0_0|-1|0
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-		ToggleSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-		SetSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-		RemoveSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleRobotArmScanner
-		isEnabled = True
-		currentRotation = (1.28700865E-32, -1.13446405E-16, 1.13446405E-16, 1)
-		storedAnimationTime = 0
-		storedAnimationSpeed = 0
-		deployState = RETRACTED
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			ExtendPanelsAction
-			{
-				actionGroup = None
-				active = False
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ExtendAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			RetractAction
-			{
-				actionGroup = None
-				active = False
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		SCANNEREFFECTS
-		{
-			EFFECT
-			{
-				className = RobotArmFXSpectrometer
-				effectStartTime = 1.5
-				effectStopTime = 3
-				lightTransformName = LightTransform
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleScienceExperiment
-		isEnabled = True
-		Deployed = False
-		Inoperable = False
-		cooldownToGo = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			DeployAction
-			{
-				actionGroup = None
-				active = False
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ResetAction
-			{
-				actionGroup = None
-				active = False
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-}
-PART
-{
-	part = sensorBarometer_4292609790
-	partName = Part
-	persistentId = 2656455383
-	pos = -0.179101631,10.0084352,-1.29255891
-	attPos = 0,0,0
-	attPos0 = -0.157240987,0.201453134,-0.586831927
-	rot = 0,0.707106888,-0.707106888,0
-	attRot = 0,0,0,1
-	attRot0 = 0,-0.707106829,0.707106829,0
-	mir = 1,1,1
-	symMethod = Mirror
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = -1
-	resPri = 0
-	dstg = 0
-	sidx = -1
-	sqor = -1
-	sepI = -1
-	attm = 1
-	sameVesselCollision = False
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	srfN = srfAttach,roverBody_4292702166,collider,0|0|0,0|0|-1,0|0|0
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-		ToggleSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-		SetSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-		RemoveSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleEnviroSensor
-		isEnabled = True
-		sensorActive = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			ToggleAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleScienceExperiment
-		isEnabled = True
-		Deployed = False
-		Inoperable = False
-		cooldownToGo = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			DeployAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ResetAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-}
-PART
-{
-	part = sensorThermometer_4292609390
-	partName = Part
-	persistentId = 3222755388
-	pos = -0.021860702,10.0084352,-1.32086158
-	attPos = 0,0,0
-	attPos0 = -5.40167093E-08,0.201453134,-0.615134835
-	rot = 0,0.707106888,-0.707106888,0
-	attRot = 0,0,0,1
-	attRot0 = 0,-0.707106829,0.707106829,0
-	mir = 1,1,1
-	symMethod = Mirror
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = -1
-	resPri = 0
-	dstg = 0
-	sidx = -1
-	sqor = -1
-	sepI = -1
-	attm = 1
-	sameVesselCollision = False
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	srfN = srfAttach,roverBody_4292702166,collider,0|0|0,0|0|-1,0|0|0
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-		ToggleSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-		SetSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-		RemoveSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleEnviroSensor
-		isEnabled = True
-		sensorActive = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			ToggleAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleScienceExperiment
-		isEnabled = True
-		Deployed = False
-		Inoperable = False
-		cooldownToGo = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			DeployAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ResetAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-}
-PART
-{
-	part = GooExperiment_4292609112
-	partName = Part
-	persistentId = 1981152135
-	pos = 0.107150525,9.9184351,-1.18720365
-	attPos = 0,0,0
-	attPos0 = 0.129011169,0.111452967,-0.481476784
-	rot = 0,0.707106888,-0.707106888,0
-	attRot = 0,0,0,1
-	attRot0 = 0,-0.707106829,0.707106829,0
-	mir = 1,1,1
-	symMethod = Mirror
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = -1
-	resPri = 0
-	dstg = 0
-	sidx = -1
-	sqor = -1
-	sepI = -1
-	attm = 1
-	sameVesselCollision = False
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	srfN = srfAttach,roverBody_4292702166,collider,0|0|-0.0900000036,0|0|-0.600000024,0|0|-0.0900000036
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-		ToggleSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-		SetSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-		RemoveSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleAnimateGeneric
-		isEnabled = True
-		aniState = LOCKED
-		animSwitch = True
-		animTime = 0
-		animSpeed = 1
-		deployPercent = 100
-		animationIsDisabled = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			ToggleAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		AXISGROUPS
-		{
-			deployPercent
-			{
-				axisGroup = None
-				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				axisInverted = None
-				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleScienceExperiment
-		isEnabled = True
-		Deployed = False
-		Inoperable = False
-		cooldownToGo = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			DeployAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ResetAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-}
-PART
-{
-	part = sensorAccelerometer_4292608182
-	partName = Part
-	persistentId = 3641464202
-	pos = -0.222816646,10.0084352,-1.05379272
-	attPos = 0,0,0
-	attPos0 = -0.200956002,0.201453194,-0.348066121
-	rot = 0,0.707106888,-0.707106888,0
-	attRot = 0,0,0,1
-	attRot0 = 0,-0.707106829,0.707106829,0
-	mir = 1,1,1
-	symMethod = Mirror
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = -1
-	resPri = 0
-	dstg = 0
-	sidx = -1
-	sqor = -1
-	sepI = -1
-	attm = 1
-	sameVesselCollision = False
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	srfN = srfAttach,roverBody_4292702166,collider,0|0|0,0|0|-1,0|0|0
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-		ToggleSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-		SetSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-		RemoveSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleEnviroSensor
-		isEnabled = True
-		sensorActive = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			ToggleAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleScienceExperiment
-		isEnabled = True
-		Deployed = False
-		Inoperable = False
-		cooldownToGo = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			DeployAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ResetAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-}
-PART
-{
-	part = GooExperiment_4292607876
-	partName = Part
-	persistentId = 3431655714
-	pos = -0.161559194,9.9184351,-0.668294609
-	attPos = 0,0,0
-	attPos0 = -0.13969855,0.111453041,0.0374318585
-	rot = 0,0.707106888,-0.707106888,0
-	attRot = 0,0,0,1
-	attRot0 = 0,-0.707106829,0.707106829,0
-	mir = 1,1,1
-	symMethod = Mirror
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = -1
-	resPri = 0
-	dstg = 0
-	sidx = -1
-	sqor = -1
-	sepI = -1
-	attm = 1
-	sameVesselCollision = False
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	srfN = srfAttach,roverBody_4292702166,collider,0|0|-0.0900000036,0|0|-0.600000024,0|0|-0.0900000036
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-		ToggleSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-		SetSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-		RemoveSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleAnimateGeneric
-		isEnabled = True
-		aniState = LOCKED
-		animSwitch = True
-		animTime = 0
-		animSpeed = 1
-		deployPercent = 100
-		animationIsDisabled = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			ToggleAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		AXISGROUPS
-		{
-			deployPercent
-			{
-				axisGroup = None
-				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				axisInverted = None
-				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleScienceExperiment
-		isEnabled = True
-		Deployed = False
-		Inoperable = False
-		cooldownToGo = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			DeployAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ResetAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-}
-PART
-{
-	part = sensorBarometer_4292607590
-	partName = Part
-	persistentId = 2325300941
-	pos = -0.0218606163,10.0084352,-1.07366157
-	attPos = 0,0,0
-	attPos0 = 3.16649675E-08,0.201453194,-0.367934972
-	rot = 0,0.707106888,-0.707106888,0
-	attRot = 0,0,0,1
-	attRot0 = 0,-0.707106829,0.707106829,0
-	mir = 1,1,1
-	symMethod = Mirror
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = -1
-	resPri = 0
-	dstg = 0
-	sidx = -1
-	sqor = -1
-	sepI = -1
-	attm = 1
-	sameVesselCollision = False
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	srfN = srfAttach,roverBody_4292702166,collider,0|0|0,0|0|-1,0|0|0
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-		ToggleSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-		SetSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-		RemoveSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleEnviroSensor
-		isEnabled = True
-		sensorActive = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			ToggleAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleScienceExperiment
-		isEnabled = True
-		Deployed = False
-		Inoperable = False
-		cooldownToGo = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			DeployAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ResetAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-}
-PART
-{
-	part = sensorAccelerometer_4292607358
-	partName = Part
-	persistentId = 1413236765
-	pos = -0.18362987,10.0084352,-0.101995528
-	attPos = 0,0,0
-	attPos0 = -0.161769226,0.201453194,0.603730679
-	rot = 0,0.707106888,-0.707106888,0
-	attRot = 0,0,0,1
-	attRot0 = 0,-0.707106829,0.707106829,0
-	mir = 1,1,1
-	symMethod = Mirror
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = -1
-	resPri = 0
-	dstg = 0
-	sidx = -1
-	sqor = -1
-	sepI = -1
-	attm = 1
-	sameVesselCollision = False
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	srfN = srfAttach,roverBody_4292702166,collider,0|0|0,0|0|-1,0|0|0
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-		ToggleSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-		SetSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-		RemoveSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleEnviroSensor
-		isEnabled = True
-		sensorActive = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			ToggleAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleScienceExperiment
-		isEnabled = True
-		Deployed = False
-		Inoperable = False
-		cooldownToGo = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			DeployAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ResetAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-}
-PART
-{
-	part = sensorThermometer_4292607074
-	partName = Part
-	persistentId = 3479096567
-	pos = 0.179491445,10.0084352,-0.705726683
-	attPos = 0,0,0
-	attPos0 = 0.20135209,0.201453194,-2.08616314E-07
-	rot = 0,0.707106888,-0.707106888,0
-	attRot = 0,0,0,1
-	attRot0 = 0,-0.707106829,0.707106829,0
-	mir = 1,1,1
-	symMethod = Mirror
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = -1
-	resPri = 0
-	dstg = 0
-	sidx = -1
-	sqor = -1
-	sepI = -1
-	attm = 1
-	sameVesselCollision = False
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	srfN = srfAttach,roverBody_4292702166,collider,0|0|0,0|0|-1,0|0|0
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-		ToggleSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-		SetSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-		RemoveSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleEnviroSensor
-		isEnabled = True
-		sensorActive = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			ToggleAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleScienceExperiment
-		isEnabled = True
-		Deployed = False
-		Inoperable = False
-		cooldownToGo = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			DeployAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ResetAction
 			{
 				actionGroup = None
 				wasActiveBeforePartWasAdjusted = False
